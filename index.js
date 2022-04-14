@@ -62,8 +62,3 @@ setInterval(() => {
 }, 60000);
 
 
-client.on("messageCreate", async msg => {
-if(msg.author.id === "171324416393871360"){
-msg.react("✅")
-}
-})
