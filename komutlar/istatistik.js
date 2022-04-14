@@ -1,15 +1,13 @@
 const Discord = require("discord.js");
-
-const config = require("../botconfig/config.json");
-
-var ee = require("../botconfig/embed.json");
-
-const settings = require("../botconfig/settings.json");
-
 module.exports = {
 
   name: "istatistik", //the command name for execution & for helpcmd [OPTIONAL]
-
+  help:{
+    name: "istatistik",
+  },
+  conf:{
+      aliases:[""]
+  },
   category: "Information", //the command category for helpcmd [OPTIONAL]
 
   aliases: [""], //the command aliases for helpcmd [OPTIONAL]
