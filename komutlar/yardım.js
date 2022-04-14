@@ -3,10 +3,10 @@ const { MessageEmbed, MessageActionRow, MessageButton } = require('discord.js');
 
 module.exports = {
     help:{
-        name:"yardim"
+        name:"yardım"
     },
     conf:{
-        aliases:[]
+        aliases:['help']
     },
     async run(client,interaction) {
 
@@ -38,13 +38,13 @@ module.exports = {
          .setTitle('Visionary | Yardım')
          .setDescription(`Merhaba ${interaction.author}`);
 
-     await interaction.channel.send({ ephemeral: false, embeds: [embed], components: [yardim,yardim2] });
+     await interaction.channel.send({ ephemeral: true, embeds: [embed], components: [yardim,yardim2] });
      // Butonu kimin kullanabileceğini ayarlıyoruz. Burada ben sadece komutu kullanan kişi olarak ayarladım.
 
      const collector = interaction.channel.createMessageComponentCollector({ componentType: 'BUTTON', time: 600000 });
 
 collector.on('collect', async i => {
-    if(i.user.id === interaction.user.id){
+    if(i.user.id === interaction.author){
     if (i.customId === 'yardim') {
         const embed2 = new MessageEmbed()
          .setColor('#0099ff')
