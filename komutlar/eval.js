@@ -35,7 +35,7 @@ module.exports.conf = {
 
 module.exports.help = {
   name: "eval",
-  guildonly: true,
-  guildPermission: 1
+  guildonly: false,
+  enabled: false
 
 }; 
