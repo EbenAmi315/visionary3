@@ -1,73 +1,75 @@
-const Command = require('/komutlar');
-const { MessageActionRow, MessageEmbed, MessageSelectMenu } = require('discord.js');
+const { SlashCommandBuilder } = require('@discordjs/builders');
+// Botumuzda kullanacağımız embed ve button gibi şeyler için gerekli olanları buraya çağırıyoruz.
+const { MessageEmbed, MessageActionRow, MessageButton } = require('discord.js');
 
-module.exports = class extends Command {
-    constructor() {
-        super({
-            name: 'yardım',
-            isSlash: false,
-            isMessage: true,
-        });
-    }
+module.exports = {
+    help:{
+        name:"yardım"
+    },
+    conf:{
+        aliases:[]
+    },
+    data: new SlashCommandBuilder()
+        .setName('yardım')
+        .setDescription('Bot hakkında bilgiler alırsınız.'),
+    async run(interaction) {
 
-    messageRun({ message }) {
-        const rowr = new MessageActionRow()
-            .addComponents(
-                new MessageSelectMenu()
-                    .setCustomId("yrdm")
-                    .setPlaceholder("Yardım")
-                    .addOptions([
-                        {
-                            label: `Genel`,
-                            description: `Bot içerisindeki genel komutlar`,
-                            value: 'option',
-                        },
-                        {
-                            label: "Moderasyon",
-                            description: "Bot içerisindeki moderasyon komutları",
-                            value: "option-2"
-                        },
-                        {
-                            label: "Eğlence",
-                            description: "Bot içerisindeki eğlence komutları",
-                            value: "option-3"
-                        },
-                    ])
-            )
+         /*
+         Botumuz için yardım sekmesi oluşturacağız. Yardım komutu sayfalı olması için uğraşacağız.
+         Bu yüzden buttonları da kullanacağız.
+         */
 
-        const embed = new MessageEmbed()
-            .setDescription(`genel komutlar buraya`)
-            .setColor("RANDOM")
-            .setAuthor({ name: "Codare", url: "https://codare.fun" })
+         // Butonlarımızı oluşturuyoruz.
+         const yardim = new MessageActionRow()
+         .addComponents(
+             new MessageButton()
+                 .setCustomId('yardim')
+                 .setLabel('Yardım Sekmesi')
+                 .setEmoji('ℹ️')
+                 .setStyle('PRIMARY'),
+         );
+         const yardim2 = new MessageActionRow()
+         .addComponents(
+             new MessageButton()
+                 .setCustomId('diger')
+                 .setLabel('Diğer Bilgiler')
+                 .setEmoji('✅')
+                 .setStyle('SECONDARY'),
+         );
 
+         const embed = new MessageEmbed()
+         .setColor('#0099ff')
+         .setTitle('Visionary | Yardım')
+         .setDescription(`Merhaba ${interaction.member.user}`);
+
+     await interaction.reply({ ephemeral: false, embeds: [embed], components: [yardim,yardim2] });
+     // Butonu kimin kullanabileceğini ayarlıyoruz. Burada ben sadece komutu kullanan kişi olarak ayarladım.
+
+     const collector = interaction.channel.createMessageComponentCollector({ componentType: 'BUTTON', time: 600000 });
+
+collector.on('collect', async i => {
+    if(i.user.id === interaction.user.id){
+    if (i.customId === 'yardim') {
         const embed2 = new MessageEmbed()
-            .setDescription("moderasyon komutları buraya")
-            .setColor("RANDOM")
-            .setAuthor({ name: "Codare", url: "https://codare.fun" })
-
-        const embed3 = new MessageEmbed()
-            .setDescription("eğlence komutları buraya")
-            .setColor("RANDOM")
-            .setAuthor({ name: "Codare", url: "https://codare.fun" })
-
-        const filter = i => i.customId === 'yrdm' && i.user.id === message.author.id;
-
-        const collector = message.channel.createMessageComponentCollector({ filter, time: 15000 });
-
-        collector.on('collect', async i => {
-            let choice = i.values[0]
-            if (choice === 'option') {
-                await i.reply({ embeds: [embed], ephemeral: true });
-            } else if(choice === "option-2") {
-                await i.reply({ embeds: [embed2], ephemeral: true });
-            } else if(choice === "option-3") {
-                await i.reply({ embeds: [embed3], ephemeral: true })
-            }
-        });
-
-        collector.on('end', collected => {});
-
-
-        message.channel.send({ content: `${message.client.user.username} Yardım Menüsü (Menü 15 saniye sonra işlevini kaybedecektir)`, components: [rowr] })
+         .setColor('#0099ff')
+         .setTitle('Visionary | Yardım')
+         .setDescription(`Merhaba len ${interaction.member.user}`);
+        await i.update({ embeds : [embed2], components: [yardim2] });
+    }else if (i.customId === 'diger') {
+        const embed2 = new MessageEmbed()
+         .setColor('#0099ff')
+         .setTitle('Visionary | Yardım')
+         .setDescription(`Merhaba len ${interaction.member.user}`);
+        await i.update({ embeds : [embed2], components: [yardim] });
     }
+}else{
+    await i.reply({ content: `Bu butonu sen kullanamazsın!`, ephemeral: true });
+}
+});
+
+collector.on('end', collected => interaction.editReply({components:[]}));
+
+ 
+
+        },
 };
