@@ -1,8 +1,9 @@
 const { Client, Message, MessageEmbed, Collection } = require("discord.js");
 const fs = require("fs");
-const config = require("./config.json");
-const prefix = config.prefix;
+const ayarlar = require("./ayarlar.json");
+const prefix = ayarlar.prefix;
 const token = process.env.TOKEN
+const db = require ('quick.db');
 
 const client = new Client({
   messageCacheLifetime: 60,
@@ -59,3 +60,25 @@ app.listen(process.env.PORT);
 setInterval(() => {
   http.get(`http://${process.env.PROJECT_DOMAIN}.glitch.me/`);
 }, 60000);
+
+
+client.on("message", async msg => {
+  
+  
+  const i = await db.fetch(`ssaass_${msg.guild.id}`);
+    if (i == 'acik') {
+      if (msg.content.toLowerCase() == 'sa' || msg.content.toLowerCase() == 's.a' || msg.content.toLowerCase() == 'selamun aleyküm') {
+          try {
+
+                  return msg.reply('Aleyküm Selam, Hoşgeldin')
+          } catch(err) {
+            console.log(err);
+          }
+      }
+    }
+    else if (i == 'kapali') {
+      
+    }
+    if (!i) return;
+  
+    });

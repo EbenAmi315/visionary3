@@ -11,7 +11,8 @@
     "discord.js": "^13.6.0",
     "fs": "^0.0.2",
     "express": "^4.17.3",
-    "pretty-ms": "^7.0.1"
+    "pretty-ms": "^7.0.1",
+    "quick.db": "^7.1.3"
   },
   "engines": {
     "node": "16.x"

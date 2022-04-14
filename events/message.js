@@ -1,5 +1,5 @@
 const { MessageEmbed, Collection } = require("discord.js");
-var config = require("../config.json");
+var config = require("../ayarlar.json");
 const client = require("..");
 const prefix = config.prefix;
 
