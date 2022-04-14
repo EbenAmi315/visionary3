@@ -1,18 +1,14 @@
-const { SlashCommandBuilder } = require('@discordjs/builders');
 // Botumuzda kullanacağımız embed ve button gibi şeyler için gerekli olanları buraya çağırıyoruz.
 const { MessageEmbed, MessageActionRow, MessageButton } = require('discord.js');
 
 module.exports = {
     help:{
-        name:"yardım"
+        name:"yardim"
     },
     conf:{
         aliases:[]
     },
-    data: new SlashCommandBuilder()
-        .setName('yardım')
-        .setDescription('Bot hakkında bilgiler alırsınız.'),
-    async run(interaction) {
+    async run(client,interaction) {
 
          /*
          Botumuz için yardım sekmesi oluşturacağız. Yardım komutu sayfalı olması için uğraşacağız.
@@ -40,9 +36,9 @@ module.exports = {
          const embed = new MessageEmbed()
          .setColor('#0099ff')
          .setTitle('Visionary | Yardım')
-         .setDescription(`Merhaba ${interaction.member.user}`);
+         .setDescription(`Merhaba ${interaction.author}`);
 
-     await interaction.reply({ ephemeral: false, embeds: [embed], components: [yardim,yardim2] });
+     await interaction.channel.send({ ephemeral: false, embeds: [embed], components: [yardim,yardim2] });
      // Butonu kimin kullanabileceğini ayarlıyoruz. Burada ben sadece komutu kullanan kişi olarak ayarladım.
 
      const collector = interaction.channel.createMessageComponentCollector({ componentType: 'BUTTON', time: 600000 });
