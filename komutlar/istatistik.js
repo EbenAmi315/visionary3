@@ -6,7 +6,7 @@ module.exports = {
     name: "istatistik",
   },
   conf:{
-      aliases:[""]
+      aliases:["i"]
   },
   category: "Information", //the command category for helpcmd [OPTIONAL]
 
