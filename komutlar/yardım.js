@@ -59,7 +59,6 @@ let moderasyon = new MessageEmbed()
 `
 **${prefix}ban <@üye>** Üyeyi banlarsınız.
 **${prefix}kick <@üye> <Sebebi Belirtiniz> ** Üyeyi kicklersiniz.
-**${prefix}mute <@üye>** Üyeyi mutelersiniz.
 
 `)
 .setFooter(`${message.author.username} tarafından kullanıldı.`, message.author.displayAvatarURL({dynamic:true}))
