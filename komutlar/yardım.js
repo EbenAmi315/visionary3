@@ -76,7 +76,7 @@ let kullanıcı = new MessageEmbed()
 .setDescription(`> Botun kullanıcı komutları hakkında bilgi alırsınız!`)
 .addField("・Komutlar ↷",
 `
-prefix}
+**${prefix}sunucubilgi** Sunucu hakkında bilgi alırsınız.
 
 `)
 .setFooter(`${message.author.username} tarafından kullanıldı.`, message.author.displayAvatarURL({dynamic:true}))
