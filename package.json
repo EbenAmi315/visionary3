@@ -20,7 +20,8 @@
     "moment-duration-format": "^2.3.2",
     "native-request": "^1.1.0",
     "node-superfetch": "^0.2.3",
-    "parse-ms": "^3.0.0"
+    "parse-ms": "^3.0.0",
+    "mongoose": "^6.2.11"
   },
   "engines": {
     "node": "16.x"
