@@ -94,7 +94,7 @@ let bot = new MessageEmbed()
 `
 **${prefix}eval** Botun sahibi komutları denemesine yarar.
 **${prefix}istatistik** Bot hakkında bilgi alırsınız.
-**${prefix}reboot** Botun sahibi botu yeniden başlatır.
+
 
 `)
 .setFooter(`${message.author.username} tarafından kullanıldı.`, message.author.displayAvatarURL({dynamic:true}))
