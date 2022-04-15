@@ -58,7 +58,7 @@ let moderasyon = new MessageEmbed()
 .addField("・Komutlar ↷",
 `
 **${prefix}ban <@üye>** Üyeyi banlarsınız.
-**${prefix}kick <@üye>** Üyeyi kicklersiniz.
+**${prefix}kick <@üye> <Sebebi Belirtiniz> ** Üyeyi kicklersiniz.
 **${prefix}mute <@üye>** Üyeyi mutelersiniz.
 
 `)
@@ -76,9 +76,7 @@ let kullanıcı = new MessageEmbed()
 .setDescription(`> Botun kullanıcı komutları hakkında bilgi alırsınız!`)
 .addField("・Komutlar ↷",
 `
-**${prefix}kullanıcıbilgi <@üye>** Üyenin bazı bilgilerine bakarsınız.
-**${prefix}sunucubilgi** Sunucu hakkında bilgi alırsınız.
-**${prefix}say** Sunucudaki üyelerin sayıları hakkında bilgi alırsınız.
+**Yakında Malesef Yeniyiz!**
 
 `)
 .setFooter(`${message.author.username} tarafından kullanıldı.`, message.author.displayAvatarURL({dynamic:true}))
