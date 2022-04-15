@@ -4,6 +4,7 @@ const ayarlar = require("./ayarlar.json");
 const prefix = ayarlar.prefix;
 const token = process.env.TOKEN
 const db = require ('quick.db');
+const Discord = require ('discord.js');
 
 const client = new Client({
   messageCacheLifetime: 60,
