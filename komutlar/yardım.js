@@ -93,7 +93,8 @@ let bot = new MessageEmbed()
 .addField("・Komutlar ↷",
 `
 **${prefix}eval** Botun sahibi komutları denemesine yarar.
-**${prefix}istatistik** Bot hakkında bilgi alırsınız.
+**${prefix}istatistik** Botun Sistemi Hakkında bilgi alırsınız.
+**${prefix}istatistik** Botun Üyeleri ve Sunucuları Hakkında bilgi alırsınız.
 
 
 `)
