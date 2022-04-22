@@ -90,13 +90,13 @@ msg.edit({content: "💎 Kullanıcı", embeds: [kullanıcı], components: [new M
 if(button.customId === "bot") {
 
 let bot = new MessageEmbed()
-.setAuthor(`${client.user.username} Kullanıcı Komutları`, client.user.avatarURL())
-.setDescription(`> Botun kullanıcı komutları hakkında bilgi alırsınız!`)
+.setAuthor(`${client.user.username} Sahip Komutları`, client.user.avatarURL())
+.setDescription(`> Bot Sahibinin komutları hakkında bilgi alırsınız!`)
 .addField("・Komutlar ↷",
 `
 **${prefix}eval** Botun sahibi komutları denemesine yarar.
 **${prefix}istatistik** Botun Sistemi Hakkında bilgi alırsınız.
-**${prefix}istatistik** Botun Üyeleri ve Sunucuları Hakkında bilgi alırsınız.
+**${prefix}botbilgi** Botun Üyeleri ve Sunucuları Hakkında bilgi alırsınız.
 
 
 `)
