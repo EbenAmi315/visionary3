@@ -1,34 +1,42 @@
-const Discord = require('discord.js');
-const prettyMilliseconds = require("pretty-ms");
+const Discord = require("discord.js");
+const moment = require("moment");
+const momentduration = require("moment-duration-format");
 
-module.exports = {
+exports.run = async (bot, message, args) => {
 
-name: "botbilgi", 
+  const seksizaman = moment
+    .duration(bot.uptime)
+    .format(" D [Gün], H [Saat], m [Dakika], s [Saniye]");
+  const cse = new Discord.MessageEmbed()
+    .setColor("RED")
+    .setTitle(`⭐ ${bot.user.username} İstatistik`)
+    .setThumbnail(bot.user.avatarURL())
+    .setFooter(":copyright: Visionary 2022 Tüm Hakları Saklıdır!", bot.user.avatarURL())
 
-description: ":sparkles: Botunuzun İstatistiğini sıralar", 
+    .setDescription(
+      `✴  **Botun Yapımcısı**\n**• \`Android#6525\`**\n \n**:eight_pointed_black_star:  Toplam Kullanıcı:** __` +
+        bot.guilds.cache.reduce((a, b) => a + b.memberCount, 0).toLocaleString() +
+        `\n__**✴  Toplam Sunucu:** __` +
+        bot.guilds.cache.size.toLocaleString() +
+        `\n__**✴  Toplam Kanal:** __` +
+        bot.channels.cache.size.toLocaleString() +
+        `__\n \n` +
+        `✴  **Bellek Kullanımı: **__` +
+        (process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2) +
+        ` MB__\n` +
+        `✴   **Çalışma Süresi: **__${seksizaman}__\n \n` +
+        `✴  **Discord.JS Sürüm:** __v` +
+        Discord.version +
+        `__`
+    )
 
- options: [], 
+  return message.channel.send({ embeds: [cse] })
+};
 
-run: async (client, interaction) => {
+exports.conf = {
+  aliases: ["b", "statistics",'istatistik']
+};
 
-const Discord = require("discord.js")
-const moment = require("moment") 
-moment.locale("tr") 
-const embed = new Discord.MessageEmbed() 
-.setAuthor(`${client.user.username} İstatistikler.`, client.user.avatarURL({size: 1024}))
-.setColor("#FF0000") 
-.addField("**Oluşturulma Tarihi:**", `\n${client.user.createdAt}`)
-.addField("**Ram Kullanma Oranı:**", `\n**${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}** MB`)
-.addField("**Bot Kurucusu:**", `\n<@171324416393871360>`)
-.addField("**Kütüphane**", `\nDiscordJS`)
-.addField("**Sunucu:**", `\n${client.guilds.cache.size}`)
-.addField("**Üye:**", `\n${client.guilds.cache.reduce((a,b)=> a + b.memberCount, 0)}`)
-.addField("**Ping**", `\n${client.ws.ping}ms`)
-.addField("**Aktiflik**", `\n**${prettyMilliseconds(client.uptime)}**`)
-.setFooter("Visionary | © Visionary Tüm Hakları Saklıdır", client.user.displayAvatarURL())
-
-interaction.reply({
-
- embeds: [embed]
-
-})}}
+exports.help = {
+  name: "botbilgi"
+}
