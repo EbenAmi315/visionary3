@@ -94,6 +94,7 @@ let bot = new MessageEmbed()
 .setDescription(`> Bot Sahibinin komutları hakkında bilgi alırsınız!`)
 .addField("・Komutlar ↷",
 `
+**${prefix}reboot** Bot sahibi Bota Reboot Atmasına Yarar.
 **${prefix}eval** Botun sahibi komutları denemesine yarar.
 **${prefix}istatistik** Botun Sistemi Hakkında bilgi alırsınız.
 **${prefix}botbilgi** Botun Üyeleri ve Sunucuları Hakkında bilgi alırsınız.
