@@ -32,7 +32,7 @@ require("moment-duration-format")
 
 exports.conf = {
 
-    aliases: []
+    aliases: ["sunucubilgi"]
 }
 
 exports.help = {

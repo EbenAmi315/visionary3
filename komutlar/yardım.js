@@ -76,6 +76,8 @@ let kullanıcı = new MessageEmbed()
 .addField("・Komutlar ↷",
 `
 **${prefix}sunucubilgi** Sunucu hakkında bilgi alırsınız.
+**${prefix}sarıl <@üye>** Etiketlediğiniz Kişiye Sarılırsınız.
+**${prefix}say** Sunucunuzdaki toplam üye sayısını Insan ve bot olarak 2 ayrı sekilde de belirtir. Komutun işlevi kısaca budur
 
 `)
 .setFooter(`${message.author.username} tarafından kullanıldı.`, message.author.displayAvatarURL({dynamic:true}))
