@@ -63,3 +63,62 @@ setInterval(() => {
 }, 60000);
 
 
+
+{
+const { MessageButton, MessageActionRow } = require("discord.js")
+const edb = require("croxydb")
+client.on("interactionCreate", async interaction => {
+if (!interaction.isButton()) return;
+
+let user = edb.get(`oylamaUSER_${interaction.message.id}_${interaction.user.id}`) 
+
+if(interaction.customId == "evet_oylama") {
+if(!user) {
+edb.add(`oylamaEVET_${interaction.message.id}`, 1)
+
+let dataEvet = edb.get(`oylamaEVET_${interaction.message.id}`) || "0"
+let dataHayır = edb.get(`oylamaHAYIR_${interaction.message.id}`) || "0"
+
+let evet = new MessageButton()
+.setStyle("SUCCESS")
+.setLabel(`(${dataEvet}) Evet`)
+.setCustomId("evet_oylama")
+let hayır = new MessageButton()
+.setStyle("DANGER")
+.setLabel(`(${dataHayır}) Hayır`)
+.setCustomId("hayır_oylama")
+
+interaction.message.edit({components: [new MessageActionRow({ components:  [evet, hayır] })]})
+
+edb.set(`oylamaUSER_${interaction.message.id}_${interaction.user.id}`, interaction.user.id) 
+}
+
+interaction.deferUpdate();
+}
+
+if(interaction.customId == "hayır_oylama") {
+if(!user) {
+edb.add(`oylamaHAYIR_${interaction.message.id}`, 1)
+
+let dataEvet = edb.get(`oylamaEVET_${interaction.message.id}`) || "0"
+let dataHayır = edb.get(`oylamaHAYIR_${interaction.message.id}`) || "0"
+
+let evet = new MessageButton()
+.setStyle("SUCCESS")
+.setLabel(`(${dataEvet}) Evet`)
+.setCustomId("evet_oylama")
+let hayır = new MessageButton()
+.setStyle("DANGER")
+.setLabel(`(${dataHayır}) Hayır`)
+.setCustomId("hayır_oylama")
+
+interaction.message.edit({ components: [new MessageActionRow({ components:  [evet, hayır] })] })
+
+edb.set(`oylamaUSER_${interaction.message.id}_${interaction.user.id}`, interaction.user.id) 
+}
+
+interaction.deferUpdate();
+}
+
+})
+}
