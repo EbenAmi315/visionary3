@@ -3,7 +3,7 @@ const { MessageButton, MessageEmbed, MessageActionRow } = require("discord.js")
 module.exports.run= async(client, message, args) => {
 
 let mesaj =  args.slice(0) .join(" ")
-if(!mesaj) return message.reply("?")
+if(!mesaj) return message.reply("Ne Oylaması Yapıcağını Belirtmelisin !")
 
 let evet = new MessageButton()
 .setStyle("SUCCESS")
