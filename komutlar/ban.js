@@ -4,11 +4,11 @@ module.exports.run = async (client, message, args) => {
 
     if (!message.member.permissions.has(Permissions.FLAGS.BAN_MEMBERS))
     return message
-      .reply({ content: "> :x: **Başarısız!** Ban yetkin yok dostum.", allowedMentions: { repliedUser: false } })
+      .reply({ content: "> <a:carpi:963791744464465940> **Başarısız!** Ban yetkin yok dostum.", allowedMentions: { repliedUser: false } })
       .catch((err) => {});
   if (!message.guild.me.permissions.has(Permissions.FLAGS.BAN_MEMBERS))
     return message
-      .reply({ content: "> :x: **Başarısız!** Benim ban yetkim yok loooooooooooooo", allowedMentions: { repliedUser: false } })
+      .reply({ content: "> <a:carpi:963791744464465940> **Başarısız!** Benim ban yetkim yok loooooooooooooo", allowedMentions: { repliedUser: false } })
       .catch((err) => {});
 
   let sebep = args.slice(1).join(" ") || "Belirtilmemiş";
@@ -29,7 +29,7 @@ module.exports.run = async (client, message, args) => {
   if (!member)
     return message
       .reply({
-        content: "> :x: **Başarısız!** Kullanıcı istiyorum ben, bana açım açım.",
+        content: "> <a:carpi:963791744464465940> **Başarısız!** Kullanıcı istiyorum ben, açım açım.",
         allowedMentions: { repliedUser: false },
       })
       .catch((err) => {});
@@ -41,21 +41,21 @@ module.exports.run = async (client, message, args) => {
     if (message.guild.ownerId === member)
       return message
         .reply({
-          content: "> :x: **Başarısız!** Sunucu sahibini banlamak mı? Yürek yedin mi diye hiç sormıyacağım, yediğin belli.",
+          content: "> <a:carpi:963791744464465940> **Başarısız!** Sunucu sahibini banlamak mı? Yürek yedin mi diye hiç sormıyacağım, yediğin belli.",
           allowedMentions: { repliedUser: false },
         })
         .catch((err) => {});
     if (message.author.id === member)
       return message
         .reply({
-          content: "> :x: **Başarısız!** Knka kendini banlamak yerine sunucudan çıksan daha iyi olur beni de yormamış olursun 🥱",
+          content: "> <a:carpi:963791744464465940> **Başarısız!** Knka kendini banlamak yerine sunucudan çıksan daha iyi olur beni de yormamış olursun 🥱",
           allowedMentions: { repliedUser: false },
         })
         .catch((err) => {});
     if (client.user.id === member)
       return message
         .reply({
-          content: "> :x: **Başarısız!** Beni mi banlıyacaksın :(",
+          content: "> <a:carpi:963791744464465940> **Başarısız!** Beni mi banlıyacaksın :(",
           allowedMentions: { repliedUser: false },
         })
         .catch((err) => {});
@@ -64,7 +64,7 @@ module.exports.run = async (client, message, args) => {
       if (kullanıcı.roles.highest.position >= message.member.roles.highest.position)
         return message
           .reply({
-            content: "> :x: **Başarısız!** Knka kullanıcının rolü senden yüksek dikkat et o seni banlamasın 🤭",
+            content: "> <a:carpi:963791744464465940> **Başarısız!** Knka kullanıcının rolü senden yüksek dikkat et o seni banlamasın 🤭",
             allowedMentions: { repliedUser: false },
           })
           .catch((err) => {});
@@ -73,7 +73,7 @@ module.exports.run = async (client, message, args) => {
     if (kullanıcı.roles.highest.position >= message.guild.me.roles.highest.position)
       return message
         .reply({
-          content: "> :x: **Başarısız!** Kullanıcının rolü benim rolümden yüksek.",
+          content: "> <a:carpi:963791744464465940> **Başarısız!** Kullanıcının rolü benim rolümden yüksek.",
           allowedMentions: { repliedUser: false },
         })
         .catch((err) => {});
@@ -86,14 +86,14 @@ module.exports.run = async (client, message, args) => {
     })
     .then(() => {
       message.reply({
-        content: `> ✅ **Başarılı!** Kullanıcı başarıyla sunucudan banlandı!`,
+        content: `> <a:tik:963791746003763230> **Başarılı!** Kullanıcı başarıyla sunucudan banlandı!`,
         allowedMentions: { repliedUser: false },
       });
     })
     .catch((e) => {
       message
         .reply({
-          content: `> :x: **Başarısız!** Kullanıcıyı sunucudan banlarken hata aldım. \n**Hata:** \`\`\`${e.name + ": " + e.message}\`\`\``,
+          content: `> <a:carpi:963791744464465940> **Başarısız!** Kullanıcıyı sunucudan banlarken hata aldım. \n**Hata:** \`\`\`${e.name + ": " + e.message}\`\`\``,
         })
         .catch((err) => {});
     });
