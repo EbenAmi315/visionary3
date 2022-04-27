@@ -24,7 +24,8 @@
     "mongoose": "^6.3.0",
     "@discordjs/builders": "^0.13.0",
     "ms": "^2.1.3",
-    "croxydb": "^0.0.7"
+    "croxydb": "^0.0.7",
+    "message-js": "^0.0.5"
   },
   "engines": {
     "node": "16.x"

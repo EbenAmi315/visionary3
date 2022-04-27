@@ -66,7 +66,7 @@ let moderasyon = new MessageEmbed()
 **${prefix}ban <@üye>** Üyeyi banlarsınız.
 **${prefix}kick <@üye> <Sebebi Belirtiniz> ** Üyeyi kicklersiniz.
 **${prefix}sunucubilgi** Sunucu hakkında bilgi alırsınız.
-**${prefix}say** Sunucunuzdaki toplam üye sayısını Insan ve bot olarak 2 ayrı sekilde de belirtir. Komutun işlevi kısaca budur
+**${prefix}say** Sunucunuzdaki toplam üye sayısını Insan ve bot olarak 2 ayrı sekilde de belirtir. Komutun işlevi kısaca budur.
 
 `)
 .setFooter(`${message.author.username} tarafından kullanıldı.`, message.author.displayAvatarURL({dynamic:true}))
