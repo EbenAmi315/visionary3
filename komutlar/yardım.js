@@ -20,15 +20,14 @@ let buton2 = new MessageButton()
 .setCustomId("bot")
 let buton3 = new MessageButton()
 .setStyle("SUCCESS")
+.setLabel("Koruma")
+.setEmoji("🛡")
+.setCustomId("koruma")
+let buton4 = new MessageButton()
+.setStyle("SUCCESS")
 .setLabel("AnaSayfa")
 .setEmoji("🏠")
 .setCustomId("anasayfa")
-let buton4 = new MessageButton()
-.setStyle("SUCCESS")
-.setLabel("Koruma")
-.setEmoji("<a:kalkan:968935067613298788>")
-.setCustomId("koruma")
-
 let buton5 = new MessageButton()
 .setStyle("DANGER")
 .setLabel("Süre Doldu")
@@ -44,12 +43,14 @@ let embed = new MessageEmbed()
 "> Butonuna tıklayarak **Eğlence Komutları** hakkında bilgi alabilirsiniz.")
 .addField("・`⚙️ Bot` ↷",
 "> Butonuna tıklayarak **Bot Komutları** hakkında bilgi alabilirsiniz.")
+.addField("・`🛡 Koruma ` ↷",
+"> Butonuna tıklayarak **Koruma Komutları** hakkında bilgi alabilirsiniz.")
 .addField("・`🏠 Anasayfa` ↷",
 "> Butonuna tıklayarak bu sayfaya geri dönersiniz.")
 .setFooter(`${message.author.username} tarafından kullanıldı.`, message.author.displayAvatarURL({dynamic:true}))
 .setColor("RANDOM")
 
-message.channel.send({embeds: [embed], components: [new MessageActionRow({ components: [buton, buton1, buton2, buton3]})]}).then(async msg => {
+message.channel.send({embeds: [embed], components: [new MessageActionRow({ components: [buton, buton1, buton2, buton3, buton4]})]}).then(async msg => {
 
 const filter = x => x.user.id === message.author.id
 let collector = msg.createMessageComponentCollector({ filter, time: 300000 })
@@ -75,11 +76,11 @@ msg.edit({content: "🛠️ Moderasyon", embeds: [moderasyon], components: [new 
 
 }
 
-if(button.customId === "kullanıcı") {
+if(button.customId === "eğlence") {
 
 let eğlence = new MessageEmbed()
 .setAuthor(`${client.user.username} Eğlence Komutları`, client.user.avatarURL())
-.setDescription(`> Botun kullanıcı komutları hakkında bilgi alırsınız!`)
+.setDescription(`> Botun Eğlence komutları hakkında bilgi alırsınız!`)
 .addField("・Komutlar ↷",
 `
 **${prefix}sarıl <@üye>** Etiketlediğiniz Kişiye Sarılırsınız.
@@ -117,25 +118,24 @@ msg.edit({content: "⚙️ Bot", embeds: [bot], components: [new MessageActionRo
 if(button.customId === "koruma") {
 
 let koruma = new MessageEmbed()
-.setAuthor(`${client.user.username} Eğlence Komutları`, client.user.avatarURL())
-.setDescription(`> Botun kullanıcı komutları hakkında bilgi alırsınız!`)
+.setAuthor(`${client.user.username} Koruma Komutları`, client.user.avatarURL())
+.setDescription(`> Botun Koruma komutları hakkında bilgi alırsınız!`)
 .addField("・Komutlar ↷",
 `
-**${prefix}sarıl <@üye>** Etiketlediğiniz Kişiye Sarılırsınız.
-**${prefix}oylama** Oylama Yapmanızı Sağlar.
-**${prefix}hediye-ver <@üye>** Etiketlediğiniz Kişiye Hediye Verirsiniz.
-
+**${prefix}ÇOK YAKINDA!**
+**${prefix}ÇOK YAKINDA!**
+**${prefix}ÇOK YAKINDA!**
 `)
 .setFooter(`${message.author.username} tarafından kullanıldı.`, message.author.displayAvatarURL({dynamic:true}))
 .setColor("RANDOM")
 
-msg.edit({content: "<a:kalkan:968935067613298788> Koruma", embeds: [koruma], components: [new MessageActionRow({ components: [buton4]})]})
+msg.edit({content: "🛡 Koruma", embeds: [koruma], components: [new MessageActionRow({ components: [buton3]})]})
 
 }
 
 if(button.customId === "anasayfa") {
 
-msg.edit({content: ":house: Ana Sayfa", embeds: [embed], components: [new MessageActionRow({ components: [buton, buton1, buton2, buton3]})]})
+msg.edit({content: ":house: Ana Sayfa", embeds: [embed], components: [new MessageActionRow({ components: [buton, buton1, buton2, buton3, buton4]})]})
 
 }
 
@@ -144,13 +144,13 @@ button.deferUpdate();
 
 collector.on("end", async button => {
 
-msg.edit({content: "Button click Timeout", embeds: [embed], components: [new MessageActionRow({ components: [buton4]})]})
+msg.edit({content: "Button click Timeout", embeds: [embed], components: [new MessageActionRow({ components: [buton5]})]})
 
         })
     })
 };
 module.exports.conf = {
-  aliases: []
+  aliases: ['help']
 };
 module.exports.help = {
   name: "yardım"
