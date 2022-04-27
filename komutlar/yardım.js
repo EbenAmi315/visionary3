@@ -10,9 +10,9 @@ let buton = new MessageButton()
 .setCustomId("moderasyon")
 let buton1 = new MessageButton()
 .setStyle("SECONDARY")
-.setLabel("Kullanıcı ")
+.setLabel("Eğlence")
 .setEmoji("💎")
-.setCustomId("kullanıcı")
+.setCustomId("eğlence")
 let buton2 = new MessageButton()
 .setStyle("SECONDARY")
 .setLabel("Bot ")
@@ -23,20 +23,25 @@ let buton3 = new MessageButton()
 .setLabel("AnaSayfa")
 .setEmoji("🏠")
 .setCustomId("anasayfa")
-
 let buton4 = new MessageButton()
+.setStyle("SUCCESS")
+.setLabel("Koruma")
+.setEmoji("<a:kalkan:968935067613298788>")
+.setCustomId("koruma")
+
+let buton5 = new MessageButton()
 .setStyle("DANGER")
-.setLabel("Timeout")
+.setLabel("Süre Doldu")
 .setDisabled(true)
-.setCustomId("timeout")
+.setCustomId("süre doldu")
 
 let embed = new MessageEmbed()
 .setAuthor(`${client.user.username} Yardım Menüsü`, client.user.avatarURL())
 .setDescription(`> Botun komutları hakkında bilgi almak için istediğiniz seçeneğin butonuna tıklayın!`)
 .addField("・`🛠️ Moderasyon` ↷",
 "> Butonuna tıklayarak **Moderasyon Komutları** hakkında bilgi alabilirsiniz.")
-.addField("・`💎 Kullanıcı` ↷",
-"> Butonuna tıklayarak **Kullanıcı Komutları** hakkında bilgi alabilirsiniz.")
+.addField("・`💎 Eğlence` ↷",
+"> Butonuna tıklayarak **Eğlence Komutları** hakkında bilgi alabilirsiniz.")
 .addField("・`⚙️ Bot` ↷",
 "> Butonuna tıklayarak **Bot Komutları** hakkında bilgi alabilirsiniz.")
 .addField("・`🏠 Anasayfa` ↷",
@@ -72,8 +77,8 @@ msg.edit({content: "🛠️ Moderasyon", embeds: [moderasyon], components: [new 
 
 if(button.customId === "kullanıcı") {
 
-let kullanıcı = new MessageEmbed()
-.setAuthor(`${client.user.username} Kullanıcı Komutları`, client.user.avatarURL())
+let eğlence = new MessageEmbed()
+.setAuthor(`${client.user.username} Eğlence Komutları`, client.user.avatarURL())
 .setDescription(`> Botun kullanıcı komutları hakkında bilgi alırsınız!`)
 .addField("・Komutlar ↷",
 `
@@ -85,7 +90,7 @@ let kullanıcı = new MessageEmbed()
 .setFooter(`${message.author.username} tarafından kullanıldı.`, message.author.displayAvatarURL({dynamic:true}))
 .setColor("RANDOM")
 
-msg.edit({content: "💎 Kullanıcı", embeds: [kullanıcı], components: [new MessageActionRow({ components: [buton3]})]})
+msg.edit({content: "💎 Eğlence", embeds: [eğlence], components: [new MessageActionRow({ components: [buton3]})]})
 
 }
 
@@ -107,6 +112,24 @@ let bot = new MessageEmbed()
 .setColor("RANDOM")
 
 msg.edit({content: "⚙️ Bot", embeds: [bot], components: [new MessageActionRow({ components: [buton3]})]})
+
+}
+if(button.customId === "koruma") {
+
+let koruma = new MessageEmbed()
+.setAuthor(`${client.user.username} Eğlence Komutları`, client.user.avatarURL())
+.setDescription(`> Botun kullanıcı komutları hakkında bilgi alırsınız!`)
+.addField("・Komutlar ↷",
+`
+**${prefix}sarıl <@üye>** Etiketlediğiniz Kişiye Sarılırsınız.
+**${prefix}oylama** Oylama Yapmanızı Sağlar.
+**${prefix}hediye-ver <@üye>** Etiketlediğiniz Kişiye Hediye Verirsiniz.
+
+`)
+.setFooter(`${message.author.username} tarafından kullanıldı.`, message.author.displayAvatarURL({dynamic:true}))
+.setColor("RANDOM")
+
+msg.edit({content: "<a:kalkan:968935067613298788> Koruma", embeds: [koruma], components: [new MessageActionRow({ components: [buton4]})]})
 
 }
 
