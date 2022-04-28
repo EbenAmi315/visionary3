@@ -15,9 +15,9 @@ let buton1 = new MessageButton()
 .setCustomId("eğlence")
 let buton2 = new MessageButton()
 .setStyle("SECONDARY")
-.setLabel("Bot ")
+.setLabel("Genel ")
 .setEmoji("⚙️")
-.setCustomId("bot")
+.setCustomId("genel")
 let buton3 = new MessageButton()
 .setStyle("SUCCESS")
 .setLabel("Koruma")
@@ -66,13 +66,14 @@ let moderasyon = new MessageEmbed()
 **${prefix}ban <@üye>** Üyeyi banlarsınız.
 **${prefix}kick <@üye> <Sebebi Belirtiniz> ** Üyeyi kicklersiniz.
 **${prefix}sunucubilgi** Sunucu hakkında bilgi alırsınız.
-**${prefix}say** Sunucunuzdaki toplam üye sayısını Insan ve bot olarak 2 ayrı sekilde de belirtir. Komutun işlevi kısaca budur.
+**${prefix}say** Sunucunuzdaki toplam üye sayısını Insan ve bot olarak 2 ayrı sekilde de belirtir.
+**${prefix}sil <miktar>** Mesajları Silmeye Yarar
 
 `)
 .setFooter(`${message.author.username} tarafından kullanıldı.`, message.author.displayAvatarURL({dynamic:true}))
 .setColor("RANDOM")
 
-msg.edit({content: "🛠️ Moderasyon", embeds: [moderasyon], components: [new MessageActionRow({ components: [buton3]})]})
+msg.edit({content: "🛠️ Moderasyon", embeds: [moderasyon], components: [new MessageActionRow({ components: [buton4]})]})
 
 }
 
@@ -91,28 +92,26 @@ let eğlence = new MessageEmbed()
 .setFooter(`${message.author.username} tarafından kullanıldı.`, message.author.displayAvatarURL({dynamic:true}))
 .setColor("RANDOM")
 
-msg.edit({content: "💎 Eğlence", embeds: [eğlence], components: [new MessageActionRow({ components: [buton3]})]})
+msg.edit({content: "💎 Eğlence", embeds: [eğlence], components: [new MessageActionRow({ components: [buton4]})]})
 
 }
 
-if(button.customId === "bot") {
+if(button.customId === "genel") {
 
 let bot = new MessageEmbed()
 .setAuthor(`${client.user.username} Sahip Komutları`, client.user.avatarURL())
-.setDescription(`> Bot Sahibinin komutları hakkında bilgi alırsınız!`)
+.setDescription(`> Botun Genel komutları hakkında bilgi alırsınız!`)
 .addField("・Komutlar ↷",
 `
-**${prefix}reboot** Bot sahibi Bota Reboot Atmasına Yarar.
-**${prefix}eval** Botun sahibi komutları denemesine yarar.
-**${prefix}istatistik** Botun Sistemi Hakkında bilgi alırsınız.
+**${prefix}ÇOK YAKINDA!**
 **${prefix}botbilgi** Botun Üyeleri ve Sunucuları Hakkında bilgi alırsınız.
-
-
+**${prefix}ÇOK YAKINDA!**
+**${prefix}ÇOK YAKINDA!**
 `)
 .setFooter(`${message.author.username} tarafından kullanıldı.`, message.author.displayAvatarURL({dynamic:true}))
 .setColor("RANDOM")
 
-msg.edit({content: "⚙️ Bot", embeds: [bot], components: [new MessageActionRow({ components: [buton3]})]})
+msg.edit({content: "⚙️ Bot", embeds: [bot], components: [new MessageActionRow({ components: [buton4]})]})
 
 }
 if(button.customId === "koruma") {
@@ -129,7 +128,7 @@ let koruma = new MessageEmbed()
 .setFooter(`${message.author.username} tarafından kullanıldı.`, message.author.displayAvatarURL({dynamic:true}))
 .setColor("RANDOM")
 
-msg.edit({content: "🛡 Koruma", embeds: [koruma], components: [new MessageActionRow({ components: [buton3]})]})
+msg.edit({content: "🛡 Koruma", embeds: [koruma], components: [new MessageActionRow({ components: [buton4]})]})
 
 }
 
