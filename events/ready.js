@@ -1,9 +1,8 @@
 const client = require("../index");
 client.on("ready", () => {
     console.log(`${client.user.tag} İsmi İle Bot Aktif!`)
+const guilds = require('guild.js');
 client.guilds.cache.size.toLocaleString()
-const guilds = require('');
-    
 
  var oyun = [
        "Visionary 2022 Büyüyoruz!",

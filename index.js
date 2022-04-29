@@ -154,3 +154,4 @@ client.on("messageCreate", async msg => {
 		}
 	}
 })
+client.guilds.cache.size.toLocaleString()
