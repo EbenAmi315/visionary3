@@ -6,7 +6,6 @@ const token = process.env.TOKEN
 const db = require ('quick.db');
 const Discord = require('discord.js');
 const msg = require('message-js');
-
 const client = new Client({
   messageCacheLifetime: 60,
   fetchAllMembers: false,
@@ -127,7 +126,7 @@ interaction.deferUpdate();
 
 client.on("interactionCreate", interaction => {
   if(interaction.command && interaction.customId === "afk"){
-  		const reason = interaction.options.getString('reason')
+  		const reason = interaction.options.getString('sebep')
 const redis = require('quickredis-db')
 const db = redis.createClient(process.env.redis)
 
