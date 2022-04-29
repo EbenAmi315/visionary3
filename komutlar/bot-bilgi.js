@@ -14,7 +14,7 @@ exports.run = async (bot, message, args) => {
     .setFooter("©️ Visionary 2022 Tüm Hakları Saklıdır!", bot.user.avatarURL())
 
     .setDescription(
-      `✴  **Botun Yapımcısı**\n**• \`<@171324416393871360>\`**\n \n**:eight_pointed_black_star:  Toplam Kullanıcı:** __` +
+      `✴  **Botun Yapımcısı**\n**• \`Tanjiro-Kun#6525\`**\n \n**:eight_pointed_black_star:  Toplam Kullanıcı:** __` +
         bot.guilds.cache.reduce((a, b) => a + b.memberCount, 0).toLocaleString() +
         `\n__**✴  Toplam Sunucu:** __` +
         bot.guilds.cache.size.toLocaleString() +
