@@ -124,3 +124,34 @@ interaction.deferUpdate();
 })
 }
 
+
+client.on("interactionCreate", interaction => {
+  if(interaction.command && interaction.customId === "afk"){
+  		const reason = interaction.options.getString('reason')
+const redis = require('quickredis-db')
+const db = redis.createClient(process.env.redis)
+
+db.set(`${interaction.user.id}_afk`, "true")
+if(reason) { db.set(`${interaction.user.id}_afksebebi`, `${reason}`) }
+interaction.reply({
+	content: 'Tamamdır!'
+})
+  }
+})
+client.on("messageCreate", async msg => {
+	const isafk = await db.get(`${msg.author.id}_afk`)
+  if(isafk === "true") {
+		msg.reply("Yeniden Hoşgeldin!")
+		db.delete(`${msg.author.id}_AFK`)
+		db.delete(`${msg.author.id}_afksebebi`)
+	} else {
+		const user = msg.mentions.users.first()
+		if(!user) return;
+		const afk = await db.get(`${user.id}_afk`)
+		if(afk === "true") {
+			const afksebebi = await db.get(`${user.id}_afksebebi`)
+			if(!afksebebi) return msg.reply(`${user.tag} is AFK!`)
+			if(afksebebi) return msg.reply(`${user.tag} is afk\n\`${afksebebi}\``)
+		}
+	}
+})
