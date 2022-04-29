@@ -105,7 +105,7 @@ let bot = new MessageEmbed()
 `
 **${prefix}ÇOK YAKINDA!**
 **${prefix}botbilgi** Botun Üyeleri ve Sunucuları Hakkında bilgi alırsınız.
-**${prefix}ÇOK YAKINDA!**
+**${prefix}yapımcım** Botun Yapımcılarını Gösterir
 **${prefix}ÇOK YAKINDA!**
 `)
 .setFooter(`${message.author.username} tarafından kullanıldı.`, message.author.displayAvatarURL({dynamic:true}))
