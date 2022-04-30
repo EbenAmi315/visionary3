@@ -107,7 +107,7 @@ let bot = new MessageEmbed()
 .setDescription(`> Botun Genel komutları hakkında bilgi alırsınız!`)
 .addField("・Komutlar ↷",
 `
-**${prefix}ÇOK YAKINDA!**
+**${prefix}dangerio** Dangerio Hosting İle İlgili Bilgi Alırsınız! <3
 **${prefix}botbilgi** Botun Üyeleri ve Sunucuları Hakkında bilgi alırsınız.
 **${prefix}yapımcım** Botun Yapımcılarını Gösterir
 **${prefix}nuke** Kanalı Silip Yeniden açar
