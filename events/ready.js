@@ -8,11 +8,12 @@ const kullanıcı = client.guilds.cache.reduce((a, b) => a + b.memberCount, 0).t
        `Visionary 2022 Büyüyoruz!`,
        `Yeni Ortak! ✬ mexelynd#1881`,
        `Visionary Şu an ${sunucu} sunucuda`,
-       `Visionary ${kullanıcı} Kullanıcıya Hizmet Veriyor`];
+       `Visionary ${kullanıcı} Kullanıcıya Hizmet Veriyor`,
+      `Dangerio Hosting Her Daim Güvenilir`];
 
   setInterval(function() {
     var random = Math.floor(Math.random() * (oyun.length - 0 + 1) + 0);
 
     client.user.setActivity(oyun[random], "");
-  }, 4 * 2500);
+  }, 5 * 2500);
 });
