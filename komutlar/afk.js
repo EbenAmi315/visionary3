@@ -3,15 +3,13 @@ const Discord = require('discord.js');
 const ayarlar = require("../ayarlar.json")
 exports.run = async (client, message, args) => {
   setTimeout(() => message.delete(), 2000);
-  let yes = ayarlar.tik
-  let no = ayarlar.carpi
   var USER = message.author;
   var REASON = args.slice(0).join("  ");
-  if(!REASON) return message.channel.send(`${client.emojis.cache.get(no)} ${message.author} Lütfen sebep yazınız.`).then((msg) => setTimeout(() => msg.delete(), 6000));
+  if(!REASON) return message.channel.send(`${message.author} Lütfen sebep yazınız.`).then((msg) => setTimeout(() => msg.delete(), 6000));
 
   db.set(`afk_${USER.id}`, REASON);
   db.set(`afk_süre_${USER.id}`, Date.now());
-  message.channel.send(`${client.emojis.cache.get(yes)} ${message.author} Başarıyla ${REASON} sebebiyle afk oldunuz.`).then((msg) => setTimeout(() => msg.delete(), 6000));
+  message.channel.send(` ${message.author} Başarıyla ${REASON} sebebiyle afk oldunuz.`).then((msg) => setTimeout(() => msg.delete(), 6000));
 };
   
  
