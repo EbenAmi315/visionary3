@@ -5,8 +5,8 @@ const ayarlar = require('../ayarlar.json')
 exports.run = async (client, message, args) => {
 let kirmizitik = ayarlar.kirmizitik
   if (db.has(`üyelikk_${message.author.id}`)) {
-   message.channel.send(`${client.emojis.cache.get(kirmizitik)} Gold Durum: \`Aktif!\``)
-  message.channel.send(`${client.emojis.cache.get(kirmizitik)} Gold Süre: \`Sınırsız!\``)
+   message.channel.send(` Gold Durum: \`Aktif!\``)
+  message.channel.send(` Gold Süre: \`Sınırsız!\``)
  } else
   message.channel.send('Sistemde sizin adınıza ait gold üye bulunamadı.')
 }

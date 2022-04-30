@@ -7,17 +7,16 @@ exports.run = async (client, message, args) => {
   if (!nesne) return message.reply('Herhangi bir ID belirtiniz.')
       if(isNaN(nesne)) return message.channel.send("ID girmen gerekiyor!")
   db.set(`üyelikk_${nesne}`, 'üyelik')
-  let kirmizitik = ayarlar.kirmizitik
   const log = new Discord.MessageEmbed()
   .setColor("RED")
   .setTimestamp()
   .setAuthor({ name:message.member.displayName, iconURL: message.author.avatarURL({ dynamic: true, }) })
   .setFooter({text: `${ayarlar.setFooter}` })
-  .setDescription(`${client.emojis.cache.get(kirmizitik)} \`${nesne}\` ID'li Kullanıcı Gold Üyeliğe Eklendi`)
+  .setDescription(`\`${nesne}\` ID'li Kullanıcı Gold Üyeliğe Eklendi`)
 
-  message.channel.send(`${client.emojis.cache.get(kirmizitik)} **${nesne}** ID'li kişi, özel üyelik sistemine eklendi.`)
+  message.channel.send(`**${nesne}** ID'li kişi, özel üyelik sistemine eklendi.`)
  message.client.channels.cache.get(ayarlar.VIPLog).send({embeds: [log]})
- message.guild.channels.cache.get(ayarlar.sohbet).send(`${client.emojis.cache.get(ayarlar.kalp)} Tebrikler <@${nesne}>! Gold Üyeliğe hoşgeldin!`);
+ message.guild.channels.cache.get(ayarlar.sohbet).send(`Tebrikler <@${nesne}>! Gold Üyeliğe hoşgeldin!`);
 }
 exports.conf = {
   enabled: true,

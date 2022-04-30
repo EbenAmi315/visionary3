@@ -12,10 +12,10 @@ exports.run = async (client, message, args) => {
   .setTimestamp()
   .setAuthor({name: message.member.displayName, iconURL: message.author.avatarURL({ dynamic: true ,}) })
   .setFooter({text: ayarlar.footer})
-  .setDescription(`${client.emojis.cache.get(ayarlar.tik)} \`${nesne}\` ID'li Kullanıcının Gold Üyeliği Silindi!`)
+  .setDescription(` \`${nesne}\` ID'li Kullanıcının Gold Üyeliği Silindi!`)
   
   message.channel.send(`${client.emojis.cache.get(ayarlar.tik)} **${nesne}** ID'li kişi, özel üyelik sisteminden kaldırıldı.`)
-  message.guild.channels.cache.get(ayarlar.sohbet).send(`${client.emojis.cache.get(ayarlar.toplar)} <@${nesne}> Gold üyeliğinizin süresi doldu!`);
+  message.guild.channels.cache.get(ayarlar.sohbet).send(`<@${nesne}> Gold üyeliğinizin süresi doldu!`);
   message.client.channels.cache.get(ayarlar.VIPLog).send({embeds: [log]})
 }
 exports.conf = {
