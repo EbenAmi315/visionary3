@@ -9,7 +9,7 @@ const kullanıcı = client.guilds.cache.reduce((a, b) => a + b.memberCount, 0).t
        `Yeni Ortak! ✬ mexelynd#1881`,
        `Visionary Şu an ${sunucu} sunucuda`,
        `Visionary ${kullanıcı} Kullanıcıya Hizmet Veriyor`,
-      `Dangerio Hosting Her Daim Güvenilir`];
+      `Dangerio Hosting Hep Güçlü Sunucularıyla discord.gg/4Xpwwz6pgN`];
 
   setInterval(function() {
     var random = Math.floor(Math.random() * (oyun.length - 0 + 1) + 0);
