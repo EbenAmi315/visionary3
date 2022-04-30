@@ -29,7 +29,8 @@
     "quickredis-db": "^1.0.7",
     "guild.js": "^1.0.2",
     "common-tags": "^1.8.2",
-    "snekfetch": "^4.0.4"
+    "snekfetch": "^4.0.4",
+    "kubitdb": "^1.4.7"
   },
   "engines": {
     "node": "16.x"
