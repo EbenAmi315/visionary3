@@ -68,7 +68,8 @@ let moderasyon = new MessageEmbed()
 **${prefix}sunucubilgi** Sunucu hakkında bilgi alırsınız.
 **${prefix}say** Sunucunuzdaki toplam üye sayısını Insan ve bot olarak 2 ayrı sekilde de belirtir.
 **${prefix}sil <miktar>** Mesajları Silmeye Yarar
-**${prefix}sa-as** sa-as sistemi açarsınız
+**${prefix}oylama** Oylama Yaparsınız
+**${prefix}küfürengel** Küfür Engel Sistemini Gösterir
 
 `)
 .setFooter(`${message.author.username} tarafından kullanıldı.`, message.author.displayAvatarURL({dynamic:true}))
@@ -88,6 +89,8 @@ let eğlence = new MessageEmbed()
 **${prefix}sarıl <@üye>** Etiketlediğiniz Kişiye Sarılırsınız.
 **${prefix}oylama** Oylama Yapmanızı Sağlar.
 **${prefix}hediye-ver <@üye>** Etiketlediğiniz Kişiye Hediye Verirsiniz.
+**${prefix}öp <@üye>** Etiketlediğiniz Kişiyi Öpersiniz
+**${prefix}aşkölçer <@üye>** Etiketlediğiniz Kişiyle Aşkınızı Ölçersiniz
 
 `)
 .setFooter(`${message.author.username} tarafından kullanıldı.`, message.author.displayAvatarURL({dynamic:true}))
@@ -107,7 +110,7 @@ let bot = new MessageEmbed()
 **${prefix}ÇOK YAKINDA!**
 **${prefix}botbilgi** Botun Üyeleri ve Sunucuları Hakkında bilgi alırsınız.
 **${prefix}yapımcım** Botun Yapımcılarını Gösterir
-**${prefix}ÇOK YAKINDA!**
+**${prefix}nuke** Kanalı Silip Yeniden açar
 `)
 .setFooter(`${message.author.username} tarafından kullanıldı.`, message.author.displayAvatarURL({dynamic:true}))
 .setColor("RANDOM")

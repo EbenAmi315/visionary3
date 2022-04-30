@@ -9,7 +9,7 @@ module.exports.run = async (client, message, args) => {
       .setDescription("<@"+kisi.id+">, <@" + message.author.id + "> Seni öpmek İstiyor  💘💗💖💕💟💞💝💓❤")
       .setColor("RED")
       .setTimestamp()
-      .setImage("https://media.discordapp.net/attachments/966832831974223962/969961882200989736/anime-kiss.gif?width=163&height=147");
+      .setImage("https://cdn.discordapp.com/attachments/966832831974223962/969962804599717918/8Sbz.gif");
     message.channel.send({content: "<@"+kisi.id+">", embeds: [embed]});
 
 };
