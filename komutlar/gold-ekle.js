@@ -1,5 +1,5 @@
 const db = require('quick.db')
-const ayarlar = require("../../ayarlar.json")
+const ayarlar = require("../ayarlar.json")
 const Discord = require('discord.js')
 exports.run = async (client, message, args) => {
   if(message.member.id !== ayarlar.sahip) return message.channel.send('Bu komut sadece \`Sahibime\` özeldir.')

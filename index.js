@@ -6,9 +6,7 @@ const token = process.env.TOKEN
 const db = require ('quick.db');
 const Discord = require('discord.js');
 const msg = require('message-js');
-const ms = require("parse-ms");
 const moment = require("moment");
-const { VoiceConnectionStatus , joinVoiceChannel } = require('@discordjs/voice');
 const client = new Client({
   messageCacheLifetime: 60,
   fetchAllMembers: false,

@@ -27,7 +27,9 @@
     "croxydb": "^0.0.7",
     "message-js": "^0.0.5",
     "quickredis-db": "^1.0.7",
-    "guild.js": "^1.0.2"
+    "guild.js": "^1.0.2",
+    "common-tags": "^1.8.2",
+    "snekfetch": "^4.0.4"
   },
   "engines": {
     "node": "16.x"
