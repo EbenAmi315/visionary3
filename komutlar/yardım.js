@@ -68,6 +68,7 @@ let moderasyon = new MessageEmbed()
 **${prefix}sunucubilgi** Sunucu hakkında bilgi alırsınız.
 **${prefix}say** Sunucunuzdaki toplam üye sayısını Insan ve bot olarak 2 ayrı sekilde de belirtir.
 **${prefix}sil <miktar>** Mesajları Silmeye Yarar
+**${prefix}sa-as** sa-as sistemi açarsınız
 
 `)
 .setFooter(`${message.author.username} tarafından kullanıldı.`, message.author.displayAvatarURL({dynamic:true}))
