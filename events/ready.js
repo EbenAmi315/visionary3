@@ -5,8 +5,8 @@ const sunucu = client.guilds.cache.size.toLocaleString()
 const kullanıcı = client.guilds.cache.reduce((a, b) => a + b.memberCount, 0).toLocaleString()
 
  var oyun = [
-       "Visionary 2022 Büyüyoruz!",
-       "Yeni Ortak! ✬ mexelynd#1881",
+       `Visionary 2022 Büyüyoruz!`,
+       `Yeni Ortak! ✬ mexelynd#1881`,
        `Visionary Şu an ${sunucu} sunucuda`,
        `Visionary ${kullanıcı} Kullanıcıya Hizmet Veriyor`];
 
