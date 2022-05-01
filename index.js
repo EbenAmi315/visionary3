@@ -125,24 +125,5 @@ interaction.deferUpdate();
 })
 }
 
-client.on("guildMemberAdd", async member => {
 
-/*
-
-    db.delete(`otorol_kanal_${message.guild.id}`)
-    db.delete(`otorol_rol_${message.guild.id}`)
-*/
-
-
-let kanal = db.fetch(`otorol_kanal_${member.guild.id}`)
-let rol   = db.fetch(`otorol_rol_${member.guild.id}`)
-
-if(!kanal) return;
-if(!rol) return;
-
-member.roles.add(rol)
-
-client.channels.cache.get(kanal).send(`${member} sunucuya katıldı ve başarılı bir şekilde <@&${rol}> isimli rol verildi.`)
-
-})
 
