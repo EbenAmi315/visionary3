@@ -68,7 +68,6 @@ let moderasyon = new MessageEmbed()
 **${prefix}sunucubilgi** Sunucu hakkında bilgi alırsınız.
 **${prefix}say** Sunucunuzdaki toplam üye sayısını Insan ve bot olarak 2 ayrı sekilde de belirtir.
 **${prefix}sil <miktar>** Mesajları Silmeye Yarar
-**${prefix}oylama** Oylama Yaparsınız
 **${prefix}küfürengel** Küfür Engel Sistemini Gösterir
 
 
