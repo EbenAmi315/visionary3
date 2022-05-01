@@ -70,6 +70,7 @@ let moderasyon = new MessageEmbed()
 **${prefix}sil <miktar>** Mesajları Silmeye Yarar
 **${prefix}oylama** Oylama Yaparsınız
 **${prefix}küfürengel** Küfür Engel Sistemini Gösterir
+**${prefix}otorol** Otorol Komutlarını Gösterir
 
 `)
 .setFooter(`${message.author.username} tarafından kullanıldı.`, message.author.displayAvatarURL({dynamic:true}))
