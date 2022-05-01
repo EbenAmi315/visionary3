@@ -1,4 +1,4 @@
-const { MessageEmbed, Collection } = require("discord.js");
+ const { MessageEmbed, Collection } = require("discord.js");
 var config = require("../ayarlar.json");
 const client = require("..");
 const prefix = config.prefix;
