@@ -13,5 +13,5 @@ const kullanıcı = client.guilds.cache.reduce((a, b) => a + b.memberCount, 0).t
     var random = Math.floor(Math.random() * (oyun.length - 0 + 1) + 0);
 
     client.user.setActivity(oyun[random], "");
-  }, 3 * 2500);
+  }, 4 * 5000);
 });
