@@ -41,8 +41,8 @@ let embed = new MessageEmbed()
 "> Butonuna tıklayarak **Moderasyon Komutları** hakkında bilgi alabilirsiniz.")
 .addField("・`💎 Eğlence` ↷",
 "> Butonuna tıklayarak **Eğlence Komutları** hakkında bilgi alabilirsiniz.")
-.addField("・`⚙️ Bot` ↷",
-"> Butonuna tıklayarak **Bot Komutları** hakkında bilgi alabilirsiniz.")
+.addField("・`⚙️ Genel` ↷",
+"> Butonuna tıklayarak **Genel Komutlar** hakkında bilgi alabilirsiniz.")
 .addField("・`🛡 Koruma ` ↷",
 "> Butonuna tıklayarak **Koruma Komutları** hakkında bilgi alabilirsiniz.")
 .addField("・`🏠 Anasayfa` ↷",
@@ -87,7 +87,6 @@ let eğlence = new MessageEmbed()
 .addField("・Komutlar ↷",
 `
 **${prefix}sarıl <@üye>** Etiketlediğiniz Kişiye Sarılırsınız.
-**${prefix}oylama** Oylama Yapmanızı Sağlar.
 **${prefix}hediye-ver <@üye>** Etiketlediğiniz Kişiye Hediye Verirsiniz.
 **${prefix}öp <@üye>** Etiketlediğiniz Kişiyi Öpersiniz
 **${prefix}aşkölçer <@üye>** Etiketlediğiniz Kişiyle Aşkınızı Ölçersiniz
@@ -115,7 +114,7 @@ let bot = new MessageEmbed()
 .setFooter(`${message.author.username} tarafından kullanıldı.`, message.author.displayAvatarURL({dynamic:true}))
 .setColor("RANDOM")
 
-msg.edit({content: "⚙️ Bot", embeds: [bot], components: [new MessageActionRow({ components: [buton4]})]})
+msg.edit({content: "⚙️ Genel", embeds: [bot], components: [new MessageActionRow({ components: [buton4]})]})
 
 }
 if(button.customId === "koruma") {
