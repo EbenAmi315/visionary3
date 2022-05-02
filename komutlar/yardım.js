@@ -63,12 +63,12 @@ let moderasyon = new MessageEmbed()
 .setDescription(`> Botun moderasyon komutları hakkında bilgi alırsınız!`)
 .addField("・Komutlar ↷",
 `
-**${prefix}ban <@üye>** Üyeyi banlarsınız.
-**${prefix}kick <@üye> <Sebebi Belirtiniz> ** Üyeyi kicklersiniz.
-**${prefix}sunucubilgi** Sunucu hakkında bilgi alırsınız.
-**${prefix}say** Sunucunuzdaki toplam üye sayısını Insan ve bot olarak 2 ayrı sekilde de belirtir.
-**${prefix}sil <miktar>** Mesajları Silmeye Yarar
-**${prefix}küfürengel** Küfür Engel Sistemini Gösterir
+<a:help2:970771679603212339>  **${prefix}ban <@üye>** Üyeyi banlarsınız.
+<a:help2:970771679603212339> **${prefix}kick <@üye> <Sebebi Belirtiniz> ** Üyeyi kicklersiniz.
+<a:help2:970771679603212339> **${prefix}sunucubilgi** Sunucu hakkında bilgi alırsınız.
+<a:help2:970771679603212339> **${prefix}say** Sunucunuzdaki toplam üye sayısını Insan ve bot olarak 2 ayrı sekilde de belirtir.
+<a:help2:970771679603212339> **${prefix}sil <miktar>** Mesajları Silmeye Yarar
+<a:help2:970771679603212339>  **${prefix}küfürengel** Küfür Engel Sistemini Gösterir
 
 
 `)
@@ -86,10 +86,10 @@ let eğlence = new MessageEmbed()
 .setDescription(`> Botun Eğlence komutları hakkında bilgi alırsınız!`)
 .addField("・Komutlar ↷",
 `
-**${prefix}sarıl <@üye>** Etiketlediğiniz Kişiye Sarılırsınız.
-**${prefix}hediye-ver <@üye>** Etiketlediğiniz Kişiye Hediye Verirsiniz.
-**${prefix}öp <@üye>** Etiketlediğiniz Kişiyi Öpersiniz
-**${prefix}aşkölçer <@üye>** Etiketlediğiniz Kişiyle Aşkınızı Ölçersiniz
+<a:help2:970771679603212339> **${prefix}sarıl <@üye>** Etiketlediğiniz Kişiye Sarılırsınız.
+<a:help2:970771679603212339> **${prefix}hediye-ver <@üye>** Etiketlediğiniz Kişiye Hediye Verirsiniz.
+<a:help2:970771679603212339> **${prefix}öp <@üye>** Etiketlediğiniz Kişiyi Öpersiniz
+<a:help2:970771679603212339> **${prefix}aşkölçer <@üye>** Etiketlediğiniz Kişiyle Aşkınızı Ölçersiniz
 
 `)
 .setFooter(`${message.author.username} tarafından kullanıldı.`, message.author.displayAvatarURL({dynamic:true}))
@@ -106,10 +106,10 @@ let bot = new MessageEmbed()
 .setDescription(`> Botun Genel komutları hakkında bilgi alırsınız!`)
 .addField("・Komutlar ↷",
 `
-**${prefix}dangerio** Dangerio Hosting İle İlgili Bilgi Alırsınız! <3
-**${prefix}botbilgi** Botun Üyeleri ve Sunucuları Hakkında bilgi alırsınız.
-**${prefix}yapımcım** Botun Yapımcılarını Gösterir
-**${prefix}nuke** Kanalı Silip Yeniden açar
+<a:help2:970771679603212339> **${prefix}dangerio** Dangerio Hosting İle İlgili Bilgi Alırsınız! <3
+<a:help2:970771679603212339> **${prefix}botbilgi** Botun Üyeleri ve Sunucuları Hakkında bilgi alırsınız.
+<a:help2:970771679603212339> **${prefix}yapımcım** Botun Yapımcılarını Gösterir
+<a:help2:970771679603212339> **${prefix}nuke** Kanalı Silip Yeniden açar
 `)
 .setFooter(`${message.author.username} tarafından kullanıldı.`, message.author.displayAvatarURL({dynamic:true}))
 .setColor("RANDOM")
@@ -124,9 +124,9 @@ let koruma = new MessageEmbed()
 .setDescription(`> Botun Koruma komutları hakkında bilgi alırsınız!`)
 .addField("・Komutlar ↷",
 `
-**${prefix}ÇOK YAKINDA!**
-**${prefix}ÇOK YAKINDA!**
-**${prefix}ÇOK YAKINDA!**
+<a:help2:970771679603212339> **${prefix}ÇOK YAKINDA!**
+<a:help2:970771679603212339> **${prefix}ÇOK YAKINDA!**
+<a:help2:970771679603212339> **${prefix}ÇOK YAKINDA!**
 `)
 .setFooter(`${message.author.username} tarafından kullanıldı.`, message.author.displayAvatarURL({dynamic:true}))
 .setColor("RANDOM")
