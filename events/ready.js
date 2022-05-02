@@ -10,7 +10,7 @@ const kullanıcı = client.guilds.cache.reduce((a, b) => a + b.memberCount, 0).t
        `Visionary ${kullanıcı} Kullanıcıya Hizmet Veriyor`];
 
   setInterval(function() {
-    var random = Math.floor(Math.random() * (oyun.length - 0 + 1) + 0);
+    var random = Math.floor(Math.random() * (oyun.length - 0 + 0 + 1) + 0);
 
     client.user.setActivity(oyun[random], "");
   }, 4 * 5000);
