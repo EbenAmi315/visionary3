@@ -16,7 +16,7 @@ exports.run = async (bot, message, args) => {
     .setDescription(
       `✴  **Botun Yapımcısı**\n**• \`Tanjiro-Kun#6525\`**\n \n**:eight_pointed_black_star:  Toplam Kullanıcı:** __` +
         bot.guilds.cache.reduce((a, b) => a + b.memberCount, 0).toLocaleString() +
-        `\n__**✴ Toplam Sunucu:** __` +
+        `\n__**<a:fryxellbilgi:892461953379860501> Toplam Sunucu:** __` +
         bot.guilds.cache.size.toLocaleString() +
         `\n__**✴  Toplam Kanal:** __` +
         bot.channels.cache.size.toLocaleString() +
