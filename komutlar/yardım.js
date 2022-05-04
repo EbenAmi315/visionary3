@@ -90,7 +90,7 @@ let eğlence = new MessageEmbed()
 <a:help2:970771679603212339> **${prefix}hediye-ver <@üye>** Etiketlediğiniz Kişiye Hediye Verirsiniz.
 <a:help2:970771679603212339> **${prefix}öp <@üye>** Etiketlediğiniz Kişiyi Öpersiniz
 <a:help2:970771679603212339> **${prefix}aşkölçer <@üye>** Etiketlediğiniz Kişiyle Aşkınızı Ölçersiniz
-
+<a:help2:970771679603212339> **${prefix}rank** Levelinizi Gösterir
 `)
 .setFooter(`${message.author.username} tarafından kullanıldı.`, message.author.displayAvatarURL({dynamic:true}))
 .setColor("RANDOM")

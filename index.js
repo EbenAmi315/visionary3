@@ -127,3 +127,28 @@ interaction.deferUpdate();
 
 
 
+{
+const dcs = require("discord.js")
+client.cooldownn = new dcs.Collection();
+client.configg = {
+cooldown: 1 * 1000
+}
+const cdb = require("orio.db");
+client.on("messageCreate", async (message) => {
+    if (!message.guild || message.author.bot) return;
+    // XP
+    exp(message);
+function exp(message) {
+    if (!client.cooldownn.has(`${message.author.id}`) || (Date.now() - client.cooldownn.get(`${message.author.id}`) > client.configg.cooldown)) {
+        let exp = cdb.add(`exp_${message.author.id}`, 1);
+        let level = Math.floor(0.3 * Math.sqrt(exp));
+        let lvl = cdb.get(`level_${message.author.id}`) || cdb.set(`level_${message.author.id}`,1);;
+        if (level > lvl) {
+            let newLevel = cdb.set(`level_${message.author.id}`,level);
+            message.channel.send(`:tada: ${message.author.toString()}, Level atladın yeni levelin ${newLevel}!`);
+        }
+        client.cooldownn.set(`${message.author.id}`, Date.now());
+    }
+}
+})
+}
